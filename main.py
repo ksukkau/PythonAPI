@@ -1,16 +1,9 @@
-# This is a sample Python script.
+import streamlit as st
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+st.title("weather forecast for the Next days")
+place = st.text_input("Place:")
+days = st.slider("forecast days:", min_value=1, max_value=5,
+                 help="Select the number of days for forecast")
+option = st.selectbox("Select data to view", ("Temperature", "Sky"))
+st.subheader(f"{option} for the next {days} days in {place}")
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
